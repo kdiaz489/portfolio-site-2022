@@ -1,0 +1,100 @@
+.textbox {
+  width: 100%;
+  color: #7f120a;
+  max-width: 780px;
+  position: relative;
+  /* margin: 120px 0 70px 20px; */
+  margin: 0px 0 70px 20px;
+  background-color: #f2f2ea;
+}
+
+.textboxDark {
+  width: 100%;
+  color: #383838;
+  max-width: 780px;
+  position: relative;
+  /* margin: 120px 0 70px 20px; */
+  margin: 0px 0 70px 20px;
+  background-color: #f2f2ea;
+}
+
+.textboxDark::before {
+  content: '';
+  width: 26px;
+  height: 58px;
+  display: block;
+  position: absolute;
+  top: -36px;
+  right: 40px;
+  transform: rotate(-20deg);
+  background-color: #9e9e92;
+}
+
+.textbox::before {
+  content: '';
+  width: 26px;
+  height: 58px;
+  display: block;
+  position: absolute;
+  top: -36px;
+  right: 40px;
+  transform: rotate(-20deg);
+  background-color: #7f120a;
+}
+
+.textboxDark::after {
+  content: '';
+  width: 43%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background-color: #9e9e92;
+  z-index: -1;
+}
+
+.textbox::after {
+  content: '';
+  width: 43%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background-color: #7f120a;
+  z-index: -1;
+}
+
+.textbox_heading {
+  display: block;
+  padding: 3.2em 3em;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@media only screen and (max-width: 1025px) {
+  .textbox {
+    width: calc(100% + 20px);
+    margin: 50px -20px 50px -5px;
+  }
+
+  .textbox::before {
+    width: 12px;
+    height: 30px;
+    top: -20px;
+    right: 65px;
+  }
+
+  .textbox::after {
+    width: 40%;
+    bottom: -10px;
+    left: -10px;
+  }
+
+  .textbox_heading {
+    padding: 2em 2.8em;
+    font-size: 1.05em;
+    line-height: 1.2em;
+  }
+}

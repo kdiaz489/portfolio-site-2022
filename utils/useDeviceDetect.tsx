@@ -1,26 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function useDeviceDetect() {
-  const [windowSize, setWindowSize] = useState<{
-    width: undefined | number;
-    height: undefined | number;
-  }>({
+type WindowDimentions = {
+  width: number | undefined;
+  height: number | undefined;
+};
+
+const useWindowDimensions = (): WindowDimentions => {
+  const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({
     width: undefined,
     height: undefined,
   });
-
   useEffect(() => {
-    const handleResize = () =>
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-
-    window.addEventListener('resize', handleResize);
-
+    function handleResize(): void {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
     handleResize();
+    window.addEventListener('resize', handleResize);
+    return (): void => window.removeEventListener('resize', handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  return windowDimensions;
+};
 
-  return windowSize;
-}
+export default useWindowDimensions;

@@ -4,30 +4,30 @@ import { useTheme } from '../context/theme';
 import Sun from './Sun';
 import Moon from './Moon';
 import Hamburger from './Hamburger';
-import useDeviceDetect from '../utils/useDeviceDetect';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Nav = () => {
   const { theme, toggleTheme } = useTheme();
-  const { width } = useDeviceDetect();
+  const matches = useMediaQuery('(min-width:600px)');
 
   return (
     <>
-      {width && width > 700 ? (
+      {matches ? (
         <aside
           className={`${styles.sidebar} ${
             theme === 'dark' ? [theme, styles.sidebar_dark].join(' ') : 'light'
           } `}>
-          <h2>Karen Diaz</h2>
+          <h1 style={{ fontSize: '32px' }}></h1>
           <nav className={styles.nav_main}>
             <ul className={styles.noBullets}>
               <li className={styles.navItem}>
                 <Link href="/about">
-                  <a className={styles.navLink}>* About Me</a>
+                  <a className={styles.navLink}>* About</a>
                 </Link>
               </li>
               <li className={styles.navItem}>
                 <Link href="/technologies">
-                  <a className={styles.navLink}>* Technologies</a>
+                  <a className={styles.navLink}>* Skills</a>
                 </Link>
               </li>
               <li className={styles.navItem}>
@@ -54,7 +54,7 @@ const Nav = () => {
               flexDirection: 'row',
               justifyContent: 'space-between',
               listStyle: 'none',
-              padding: '0 4rem',
+              padding: '0 20px',
               backgroundColor: 'inherit',
             }}>
             <li>KSD</li>

@@ -1,7 +1,5 @@
-import Nav from '../components/Nav';
 import TextBox from '../components/TextBox';
 import { useTheme } from '../context/theme';
-import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const { theme, toggleTheme } = useTheme();

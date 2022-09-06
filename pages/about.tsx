@@ -1,36 +1,19 @@
 import { ChangeEvent, SyntheticEvent, useState } from 'react';
-import { useTheme } from '../context/theme';
-import styles from '../styles/Contact.module.css';
 import axios from 'axios';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '../context/theme';
 import TextBox from '../components/TextBox';
 import Nav from '../components/Nav';
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function About() {
   const { theme, toggleTheme } = useTheme();
   const matches = useMediaQuery('(min-width:641px)');
   const [form, setForm] = useState({});
-  const handleForm = (
-    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    const { value, name } = e.target;
-    setForm({ ...form, [name]: value });
-    console.log(form);
-  };
-
-  const handleSubmit = async (e: SyntheticEvent) => {
-    e.preventDefault();
-    try {
-      let res = await axios.post('/api/contact', form);
-      alert('Your message has been successfully sent!');
-    } catch (error) {
-      alert('An error occurred. Try again');
-    }
-  };
 
   return (
     <div
-      className={`main ${theme}`}
+      className={`main`}
+      data-theme={theme}
       style={{
         display: 'flex',
         flexDirection: `${matches ? 'row' : 'column'}`,

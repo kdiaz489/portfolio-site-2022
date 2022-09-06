@@ -1,14 +1,19 @@
-import React from 'react';
+type Props = {
+  width?: number;
+  height?: number;
+  color?: string;
+};
 
-type Props = {};
-
-const Graphql = (props: Props) => {
+const Graphql = ({ width = 24, height = 24, color = 'black' }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
       enableBackground="new 0 0 21 24"
       viewBox="0 0 21 24">
       <path
+        fill={color}
         d="M12.6,3.3L17.2,6c0.4-0.4,0.9-0.6,1.5-0.6c1.1,0,2,0.9,2,2c0,0.9-0.6,1.7-1.5,1.9l0,0v5.3c0.9,0.2,1.5,1,1.5,1.9
   c0,1.1-0.9,2-2,2c-0.6,0-1.1-0.3-1.5-0.7l0,0l-4.6,2.7c0.1,0.2,0.1,0.4,0.1,0.6c0,1.1-0.9,2-2,2s-2-0.9-2-2c0-0.2,0-0.4,0.1-0.6l0,0
   L4.1,18c-0.4,0.4-0.9,0.6-1.4,0.6c-1.1,0-2-0.9-2-2c0-0.9,0.6-1.7,1.5-1.9l0,0V9.3c-0.9-0.2-1.5-1-1.5-2c0-1.1,0.9-2,2-2

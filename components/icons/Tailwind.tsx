@@ -1,11 +1,29 @@
-import React from 'react';
+type Props = {
+  width?: number;
+  height?: number;
+  color?: string;
+};
 
-type Props = {};
-
-const Tailwind = (props: Props) => {
+const Tailwind = ({ width = 24, height = 24, color = 'black' }: Props) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-      <path d="M18.5 9.51a4.22 4.22 0 0 1-1.91-1.34A5.77 5.77 0 0 0 12 6a4.72 4.72 0 0 0-5 4 3.23 3.23 0 0 1 3.5-1.49 4.32 4.32 0 0 1 1.91 1.35A5.77 5.77 0 0 0 17 12a4.72 4.72 0 0 0 5-4 3.2 3.2 0 0 1-3.5 1.51zm-13 4.98a4.22 4.22 0 0 1 1.91 1.34A5.77 5.77 0 0 0 12 18a4.72 4.72 0 0 0 5-4 3.23 3.23 0 0 1-3.5 1.49 4.32 4.32 0 0 1-1.91-1.35A5.8 5.8 0 0 0 7 12a4.72 4.72 0 0 0-5 4 3.2 3.2 0 0 1 3.5-1.51z" />
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height}>
+      <defs>
+        <linearGradient
+          x1="0"
+          y1="-21.333"
+          y2="85.333"
+          id="A"
+          x2="64"
+          gradientUnits="userSpaceOnUse">
+          <stop stopColor="#2383ae" offset="0%" />
+          <stop stopColor="#6dd7b9" offset="100%" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M16 25.6c2.133-8.533 7.467-12.8 16-12.8 12.8 0 14.4 9.6 20.8 11.2 4.267 1.067 8-.533 11.2-4.8C61.867 27.733 56.533 32 48 32c-12.8 0-14.4-9.6-20.8-11.2-4.267-1.067-8 .533-11.2 4.8zM0 44.8C2.133 36.267 7.467 32 16 32c12.8 0 14.4 9.6 20.8 11.2 4.267 1.067 8-.533 11.2-4.8-2.133 8.533-7.467 12.8-16 12.8-12.8 0-14.4-9.6-20.8-11.2-4.267-1.067-8 .533-11.2 4.8z"
+        fill={color}
+        fillRule="evenodd"
+      />
     </svg>
   );
 };

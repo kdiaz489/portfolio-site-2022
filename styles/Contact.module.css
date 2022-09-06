@@ -39,12 +39,38 @@
   z-index: -1;
 }
 
+.contactFormDark {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  background-color: #d9d9d2;
+  padding: 20px;
+  position: relative;
+  margin: 10px auto;
+}
+
+.contactFormDark::after {
+  content: '';
+  width: 73%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background-color: #9e9e92;
+  z-index: -1;
+}
+
 .form_group {
   padding: 10px 20px;
 }
 
 .label {
   color: #f94951;
+}
+
+.labelDark {
+  color: #9e9e92;
 }
 
 .inputfield {
@@ -55,6 +81,14 @@
   background-color: #ffe6e8;
 }
 
+.inputFieldDark {
+  padding: 8px 20px;
+  width: 100%;
+  border: #9e9e92 1px solid;
+  color: #9e9e92;
+  background-color: #d9d9d2;
+}
+
 .inputfield:focus {
   background-color: #fafafa;
 }
@@ -62,6 +96,13 @@
 .submit_button {
   background-color: #f94951;
   color: #fafafa;
+  border: none;
+  padding: 7px 30px;
+}
+
+.submitButtonDark {
+  background-color: #9e9e92;
+  color: #d9d9d2;
   border: none;
   padding: 7px 30px;
 }

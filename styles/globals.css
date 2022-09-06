@@ -9,6 +9,15 @@ body {
   height: 100%;
   font-family: 'Space Mono', monospace;
 }
+:root {
+  --background: #fafaf7;
+  --text-primary: #7f120a;
+}
+
+[data-theme='dark'] {
+  --background: black;
+  --text-primary: #9e9b8d;
+}
 
 a {
   color: inherit;
@@ -45,6 +54,11 @@ li {
 .dark {
   background-color: black;
   color: #9e9b8d;
+}
+
+.main {
+  background-color: var(--background);
+  color: var(--text-primary);
 }
 
 /* .main {

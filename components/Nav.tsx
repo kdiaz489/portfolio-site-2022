@@ -27,7 +27,7 @@ const Nav = () => {
               </li>
               <li className={styles.navItem}>
                 <Link href="/technologies">
-                  <a className={styles.navLink}>* Skills</a>
+                  <a className={styles.navLink}>* Exp</a>
                 </Link>
               </li>
               <li className={styles.navItem}>
